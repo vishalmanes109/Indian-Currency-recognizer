@@ -8,11 +8,13 @@
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="./index.css">>
+  <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./normalize.css">
+
 </head>
 <body>
 <!-- Navbar -->
-<nav class="navbar navbar-default">
+<nav class="navbar fixed-top navbar-default">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -22,9 +24,9 @@
       </button>
       <a class="navbar-brand" href="#"></a>
     </div>
-    <div class="collapse navbar-collapse"  id="myNavbar">
+    <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Home</a></li>
+        <li><a href="index.html">Home</a></li>
         <li><a href="code.html">Code</a></li>
         <li><a href="demo.html">Demo</a></li>
       </ul>
@@ -34,7 +36,7 @@
 
 <!-- First Container -->
 <div class="container-fluid bg-1 text-center">
-  <h1 class="margin">Indian Currency Note recognizer</h1>
+  <h1 class="margin">Indian Currency Note Recognizer</h1>
   <img src="../asset/image_Indian Currency Note detector.png" class="img-responsive  margin" style="display:inline" alt="banner" width="80%" height="350">
   <h4>Using Deep Learning </h4>
 </div>
@@ -85,6 +87,13 @@
   </div>
 </div>
 
+<div class="container-fluid bg-1 text-center">
+<p>Download Model</p>
+<p>Download Dataset</p>
+<p>Download weight </p>
+</div>
+
+<div class="container-fluid bg-3 text-center"></div>
 <!-- Footer -->
 <footer class="container-fluid bg-2 text-center">
   <p>Copyright vishalmanes109</p>
