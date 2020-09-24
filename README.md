@@ -1,6 +1,6 @@
 <div class="container-fluid bg-1 text-center">
   <h1 class="margin">Indian Currency Note Recognizer</h1>
-  <img src="../asset/image_Indian Currency Note detector.png" class="img-responsive  margin" style="display:inline" alt="banner" width="80%" height="350">
+  <img src="https://github.com/vishalmanes109/Indian-Currency-recognizer/blob/master/asset/image_Indian%20Currency%20Note%20detector.png" class="img-responsive  margin" style="display:inline" alt="banner" width="80%" height="350">
   <h4>Using Deep Learning </h4>
 </div>
 
@@ -13,7 +13,7 @@
   <p><a style="color:whitesmoke ; font-size: 1.5em; text-decoration: underline;" href="https://www.youtube.com/watch?v=CTQaOSVYpn8&feature=youtu.be">Click : Watch Youtube video </a></p>
   <br>
   <div  >
-      <img style=" width:90%;"  src="../asset/Indian Currency Note detector.gif" alt="info.gif">
+      <img style=" width:90%;"  src="https://github.com/vishalmanes109/Indian-Currency-recognizer/blob/master/asset/Indian%20Currency%20Note%20detector.gif" alt="info.gif">
 
   </div>
   <br>
