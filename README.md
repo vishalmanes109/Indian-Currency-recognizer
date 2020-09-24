@@ -10,7 +10,8 @@
   <p>Indian Currency  Recognizer, detects and recognizes the currency </p>
   <p> After recognition it also  convert the text into audio </p>
   <p>It does not distinguish between fake and genuine currency</p>
-  <p><a style="color:whitesmoke ; font-size: 1.5em; text-decoration: underline;" href="https://www.youtube.com/watch?v=CTQaOSVYpn8&feature=youtu.be">Click : Watch Youtube video </a></p>
+  
+  ##  <p><a style="color:whitesmoke ; font-size: 1.5em; text-decoration: underline;" href="https://www.youtube.com/watch?v=CTQaOSVYpn8&feature=youtu.be">Click : Watch Youtube video </a></p>
   <br>
   <div  >
       <img style=" width:90%;"  src="https://github.com/vishalmanes109/Indian-Currency-recognizer/blob/master/asset/Indian%20Currency%20Note%20detector.gif" alt="info.gif">
