@@ -37,10 +37,14 @@
 <!-- First Container -->
 <div class="container-fluid bg-1 text-center">
   <h1 class="margin">Indian Currency Note recognizer</h1>
+  <h2>Code</h2>
+
 </div>
 
-<div class="container-fluid bg-3 text-justify">
-  <h3 class="margin text-center">Output Example</h3><br>
+<div class="container-fluid bg-3 text-left">
+  <h3 class=" text-center">Output Example</h3><br>
+    <p class=" text-center " style="margin-bottom: 3em;"><a  style="color:red ; font-size: 1.5em; text-decoration: underline; "
+        href="https://www.youtube.com/watch?v=CTQaOSVYpn8&feature=youtu.be">Click : Watch Youtube video </a></p>
   <div>
     <h4>Example 1: detect 2000 Rs </h4>
 
@@ -112,7 +116,7 @@
     <h4>
       import necessary libraries 
     </h4>
-    <pre>
+    <pre><h5>
       #import basic essential libraries
       import pandas as pd
       import numpy as np
@@ -124,21 +128,23 @@
 
       for dirname, _, filenames in os.walk('/kaggle/input'):
       for filename in filenames:
-      print(os.path.join(dirname, filename))
+      print(os.path.join(dirname, filename))</h5>
     </pre>
     <pre>
-      # import keras libraries to build model and conv net
+
+      <h5># import keras libraries to build model and conv net
 
       import tensorflow as tf
       from tensorflow.python import keras
       from tensorflow.python.keras.models import Sequential
       from tensorflow.python.keras.layers import Dense,Conv2D,MaxPooling2D,Dropout,Flatten
-      from pathlib import Path
+      from pathlib import Path</h5>
     </pre>
     <h4>
        load dataset and image agumentaion
     </h4>
     <pre>
+      <h5>
       # current datasetonly has 4k images
       # so image agumentation to virtually increase size of dataset
       # help (ImageDataGenerator?)
@@ -161,21 +167,21 @@
       batch_size=32
       
       )
+      </h5>
     </pre>
-    <pre>
-      #load validation data
+    <pre> <h5>#load validation data
       val_data=ImageDataGenerator().flow_from_directory(directory='../input/indian-currency-note-images-dataset-2020/Indian
       currency dataset v1/validation',
       target_size=(256,256),
       class_mode='categorical'
-      )
+      )</h5>
     </pre>
     
     <h4>
       Model
     </h4>
     <pre>
-      <h5>Early stopping and callback</h5>
+      <h5>Early stopping and callback
       # import modelcheckpoint and earlystopping
       
       from tensorflow.python.keras.callbacks import ModelCheckpoint,EarlyStopping
@@ -190,10 +196,10 @@
       # early stopping .. it stops the trainng phase if there is no improvement in the model
       # patience defines how many epoch can b ignored before forcefully stoping the model
       
-      early = EarlyStopping(monitor='val_loss', min_delta=0, patience=10, verbose=1, mode='auto')
+      early = EarlyStopping(monitor='val_loss', min_delta=0, patience=10, verbose=1, mode='auto')</h5>
     </pre>
     <pre>
-      <h5>define model  and add layers </h5>
+      <h5>define model  and add layers 
       # import ResNet50
       
       from tensorflow.keras.applications import ResNet50
@@ -213,55 +219,55 @@
       #last fully connected layer with softmax as a activation function
       my_new_model.add(Dense(num_classes, activation='softmax'))
       
-      my_new_model.layers[0].trainable = False
+      my_new_model.layers[0].trainable = False</h5>
     </pre>
     <pre>
-      <h5>compile Model </h5>
+      <h5>compile Model 
       # compile model with softmax as  activatio fuction 
-      my_new_model.add(Dense(num_classes, activation='softmax'))
+      my_new_model.add(Dense(num_classes, activation='softmax'))</h5>
     </pre>
 
     <pre>
-      <h5>Fit the model with train and val dataset</h5>
+      <h5>Fit the model with train and val dataset
       # fit the model with train data and validation data
       # epoch 50
       my_new_model.fit_generator(
       train_data,
       epochs = 50,
       validation_data=val_data,
-      callbacks=[checkpoint,early])
+      callbacks=[checkpoint,early])</h5>
     </pre>
     <pre>
-      <h5>save model into JSON</h5>
+      <h5>save model into JSON
       # save the json model
       
       model_json = my_new_model.to_json()
       with open("resnet_50_model.json", "w") as json_file:
-      json_file.write(model_json)
+      json_file.write(model_json)</h5>
     </pre>
   
   </div>
   <h3>Prediction</h3>
   <div class="Code text-justify" >
     <pre>
-      <h5>class labels</h5>
+      <h5>class labels
       # These are the class labels from the training data (Each number stands for the currency denomination)
       class_labels = [
       '10','100','20','200','2000','50','500','Background'
-      ]
+      ]</h5>
     </pre>
     <pre>
-      <h5>Show Img</h5>
+      <h5>Show Img
       # Load an image file to test, resizing it to 256x256 pixels
       # to save time in training I resize images to 256x256
       
       from tensorflow.python.keras.preprocessing import image
       
       img = image.load_img("../input/indian-currency-notes/indian_currency_new/validation/100/38.jpg", target_size=(256,256))
-      plt.imshow(img)
+      plt.imshow(img)</h5>
     </pre>
     <pre>
-      <h5>Prediction method</h5>
+      <h5>Prediction method
       # Convert the image to a numpy array
       from tensorflow.python.keras.preprocessing import image
       
@@ -288,16 +294,16 @@
       
         # Print the result
         print(file_name)
-        print("This is image is a {} - Likelihood: {:2f}".format(class_label, class_likelihood))
+        print("This is image is a {} - Likelihood: {:2f}".format(class_label, class_likelihood))</h5>
     </pre>
     <pre>
-      <h5>prediction method call</h5>
+      <h5>prediction method call
       import glob
       # Find all *.jpg files in the directory
       file_name_list = glob.glob('../input/indian-currency-notes/indian_currency_new/validation/100/38.jpg')
       print(len(file_name_list))
       for file_name in file_name_list:
-        prediction(file_name)
+        prediction(file_name)</h5>
     </pre>
 
   </div>
@@ -305,14 +311,14 @@
   <div class="code text-justify">
 
     <pre>
-      # import essentials to build cov net
+      <h5># import essentials to build cov net
       
       from keras.models import Sequential
       from keras.layers import Dense
-      from keras.models import model_from_json
+      from keras.models import model_from_json</h5>
     </pre>
     <pre>
-      # ResNet-50 model
+      <h5># ResNet-50 model
       json_file = open('/kaggle/input/transfer-learning/resnet_50_model.json', 'r')
       
       #reading model
@@ -328,9 +334,10 @@
       
       # evaluate loaded model on test data
       loaded_model.compile(loss='binary_crossentropy', optimizer='rmsprop', metrics=['accuracy'])
+    </h5>
     </pre>
     <pre>
-        <h5>Dependecies for text to speech conversion</h5>
+        <h5>Dependecies for text to speech conversion
         #Dependecies
         #install ggts and pyttsx3 before execution
         
@@ -343,9 +350,11 @@
         #Unlike alternative libraries, it works offline, and is compatible with both Python 2 and 3.
         
         !pip install pyttsx3
+        </h5>
       </pre>
     <pre>
-        <h5>prediction function with text to speech functionality</h5>
+        <h5>prediction function with text to speech functionality
+
     # Convert the image to a numpy array
     from gtts import gTTS 
     from tensorflow.python.keras.preprocessing import image
@@ -385,9 +394,10 @@
         
         # convert the actual prediction result text into audio file.
         tts(class_label,class_likelihood)
+        </h5>
       </pre>
       <pre>
-        <h5>load image to predict</h5>
+        <h5>load image to predict
         # Load an image file to test, resizing it to 256x256 pixels (as required by this model)
         # to save time in training I resize images to 256x256
         
@@ -397,9 +407,10 @@
         # example of test image
         img = image.load_img("../input/test-dataset/test/Background__305.jpg", target_size=(256,256))
         plt.imshow(img)
+        </h5>
       </pre>
       <pre>
-        <h5>text to spech conversion</h5>
+        <h5>text to spech conversion
       # import pydub (Manipulate audio with an simple and easy high level interface)
       from pydub import AudioSegment
       import IPython
@@ -419,6 +430,7 @@
         #store audio result 
         file='result.mp3'
         myobj.save(file) 
+        </h5>
       </pre>
       <pre>
         <h5>predict the currecy 
@@ -436,12 +448,13 @@
         </h5>
       </pre>
       <pre>
-        <h5>save audio result</h5>
+        <h5>save audio result
         # save audio result into .mp3 file
         
         path='./result.mp3'
         
         IPython.display.Audio(path)
+        </h5>
       </pre>
   </div>
   
