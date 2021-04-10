@@ -11,6 +11,7 @@
   <p> After recognition it also  convert the text into audio </p>
   <p>It does not distinguish between fake and genuine currency</p>
   
+  ## <p><a style="color:whitesmoke ; font-size: 1.5em; text-decoration: underline;" href="https://vishalmanes109.github.io/Indian-Currency-recognizer/src/index.html">Website</a></p>
   ##  <p><a style="color:whitesmoke ; font-size: 1.5em; text-decoration: underline;" href="https://www.youtube.com/watch?v=CTQaOSVYpn8&feature=youtu.be">Click : Watch Youtube video </a></p>
   <br>
   <div  >
@@ -55,7 +56,7 @@
 
 <div class="container-fluid bg-1 text-center">
   <p>
-  <a style="color:rgb(255, 255, 255);" href="https://github.com/vishalmanes109/Indian-Currency-recognizer"> Download Source Code</a></p>
+  <a style="color:rgb(255, 255, 255);" href="https://github.com/vishalmanes109/Indian-Currency-recognizer/tree/master/Indian%20Currency%20recognizer%20model"> Download Source Code</a></p>
   <p><a style="color:rgb(255, 255, 255)" href="https://www.kaggle.com/vishalmane109/indian-currency-note-images-dataset-2020"> Download Dataset</a></p>
   <p><a style="color:rgb(255, 255, 255)" href="https://www.kaggle.com/vishalmane109/indian-currency-note-resnet-weights"> Download Weight</a></p>
 
